@@ -6,19 +6,19 @@ interface Shape {
 
 
 class Circle implements Shape {
-	double radius;
+	private double radius;
 	
 	Circle (double radius) {
 		this.radius = radius;
 	}
 	
 	public double getArea() {
-		return Math.PI * Math.pow(radius, 2);
+		return Math.PI * radius * radius;
 	}
 }
 
 class Rectangle implements Shape {
-	double width, height;
+	private double width, height;
 	
 	Rectangle (double width, double height) {
 		this.width = width;
