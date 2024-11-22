@@ -1,7 +1,7 @@
 package javaLab;
 
 public class Multithreading implements Runnable {
-    public static int counter = 0;
+    public static int count = 0;
 
     public void run() {
         for (int i = 0; i < 10; i++) {
@@ -15,15 +15,15 @@ public class Multithreading implements Runnable {
     }
 
     public static synchronized void increment() {
-        counter++;
+        count++;
     }
 
     public static void main(String[] args) {
-        Multithreading o = new Multithreading();
+        Multithreading counter = new Multithreading();
         Thread[] threads = new Thread[5];
 
         for (int i = 0; i < 5; i++) {
-            threads[i] = new Thread(o);
+            threads[i] = new Thread(counter);
             threads[i].start();
         }
 
@@ -35,6 +35,6 @@ public class Multithreading implements Runnable {
             }
         }
 
-        System.out.println("Final counter value: " + counter);
+        System.out.println("Final counter value: " + count);
     }
 }
